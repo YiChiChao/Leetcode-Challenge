@@ -7,9 +7,12 @@
 最簡單的那種，大概寫一下步驟：
 1. 確認Base Case：F(0) = 0, F(1) = 1
 2. 確立Recursive Form：F(n) = F(n-1) + F(n-2)
-3. 觀察需要留多少儲存空間去儲存原先算好的東西：因為Recursive Form會用到F(n-1)和F(n-2)，所以我用f0和f1去儲存每一次會用到的兩個原先的數字而已(credit to Coherent!!)
+3. 觀察需要留多少儲存空間去儲存原先算好的東西：因為Recursive Form會用到F(n-1)和F(n-2)，所以我用f0和f1去儲存每一次會用到的兩個原先的數字而已 (credit to Coherent!!)
 
-**寫後小錯誤：** 因為loop是從i = 2開始，一開始就應該要考慮到i = 1和i = 0的情況。 
+**寫後小錯誤：** 因為loop是從`i = 2`開始，一開始就應該要考慮到`i = 1`和`i = 0`的情況。
+
+### 1137. N-th Tribonacci Number
+同509.，Recursive Form：F(n) = F(n-1) + F(n-2) + F(n-3)
 
 ## Math
 
