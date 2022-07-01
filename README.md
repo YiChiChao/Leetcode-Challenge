@@ -14,6 +14,18 @@
 ### 1137. N-th Tribonacci Number
 同509.，Recursive Form：F(n) = F(n-1) + F(n-2) + F(n-3)
 
+### 70. Climbing Stairs
+**看題目的想法：** 每次爬樓梯時，第一步可以選擇走1階或走2階。如果選擇走1階，就會剩下n-1階(就變成n-1階的問題)，如果選擇走2階，就會剩下n-2階(接下去就是變成n-2階的問題)。也就是說n階樓梯的走法其實是(n-1)階+(n-2)階的走法。
+
+## Sorting
+### 1710. Maximum Units on a Truck
+**看題目的想法：** 簡單的knapsack problem。排序之後由最大的開始放。
+
+**寫完之後的想法架構：** 這個題目有兩個可被優化的地方，一個是greedy，一個是sorting。(以後要避免去用現成的sorting，而是多去想在sorting是否可以有更優化的方法)
+
+觀察這個 `numberOfBoxes`大小只有1000，加上這個input的形式特質上會有重複(而重複就能夠合併)，應該是何利用bucket sort。(雖然這也是看discussion才想到的)
+寫到這裡就有點好奇究竟quicksort 和  bucket sort 在這一題的速度誰會比較快。(理論上還是bucket sort)，用C測試完後的確是bucket sort比較快。(O(n))
+
 ## Math
 
 ### 462. Minimum Moves to Equal Array Elements II
