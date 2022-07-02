@@ -23,7 +23,7 @@
 
 **寫完之後的想法架構：** 這個題目有兩個可被優化的地方，一個是greedy，一個是sorting。(以後要避免去用現成的sorting，而是多去想在sorting是否可以有更優化的方法)
 
-觀察這個 `numberOfBoxes`大小只有1000，加上這個input的形式特質上會有重複(而重複就能夠合併)，應該是何利用bucket sort。(雖然這也是看discussion才想到的)
+觀察這個 `numberOfBoxes`大小只有1000，加上這個input的形式特質上會有重複(而重複就能夠合併)，應該適合利用bucket sort。(雖然這也是看discussion才想到的)
 寫到這裡就有點好奇究竟quicksort 和  bucket sort 在這一題的速度誰會比較快。(理論上還是bucket sort)，用C測試完後的確是bucket sort比較快。(O(n))
 
 ## Math
@@ -34,4 +34,12 @@
 **寫完之後的想法架構：** 要讓每一個數都是移動最小步，要考慮到如果一個數特別大，那麼在算平均數的時候，整個平均數就會偏大。即使當其他小的數字出現比較多次，它在整個數列的權重也會因為平均數被稀釋掉。導致加的步數會重複好多次。結論是應該要取中位數才會使每個數移動的步數最少。
 
 **類似題目：**[UVA 10041](https://zerojudge.tw/ShowProblem?problemid=a737)
+### 1465. Maximum Area of a Piece of Cake After Horizontal and Vertical Cuts
+**看題目的想法：** 一開始想法就是要知道所有格線之間的間隔，所以要先排序。因為這次要排序的東西都是獨一的，沒辦法用特殊的bucket sort，所以就直接用algo內建的sort寫。最後算出行還有欄的最大間隔後相乘得解。
+
+**寫完之後的想法debugging：** 這題都是小細節錯誤。因為數字很大，所以要mod $10^{9}+7$。再來因為寫法是從`i = 1`開始，所以一定會有`i = 0`沒考慮到。加上了`maxhor`和`maxver`的初始化之後就沒問題了。
+```cpp = 
+long long int maxhor = max(horizontalCuts[0], h - horizontalCuts[horizontalCuts.size()-1];
+long long int maxver = max(verticalCuts[0], w - verticalCuts[verticalCuts.size()-1]);
+```
 
