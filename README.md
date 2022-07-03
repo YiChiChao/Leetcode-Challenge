@@ -17,6 +17,17 @@
 ### 70. Climbing Stairs
 **看題目的想法：** 每次爬樓梯時，第一步可以選擇走1階或走2階。如果選擇走1階，就會剩下n-1階(就變成n-1階的問題)，如果選擇走2階，就會剩下n-2階(接下去就是變成n-2階的問題)。也就是說n階樓梯的走法其實是(n-1)階+(n-2)階的走法。
 
+### 376. Wiggle Subsequence
+**看題目的想法：** 因為看到題目是要求`Longest Subsequece`，就想到之前演算法課有教過求類似題目時是用dp，照著這個想法去想。
+1. 確認Base Case：f(1) = 1, f(2) 如果前兩個數字步的話就一定是2
+2. 確立Recursive Form：
+```cpp =
+MaxSequenceLength = MaxSequenceLength + (((arr[i]-arr[i-1])*(arr[i-1]-arr[i-2]))<0)? 1 : 0
+```
+
+**寫完的想法：**有抓到一點dp的感覺，也有記得去處理邊界條件。
+
+
 ## Sorting
 ### 1710. Maximum Units on a Truck
 **看題目的想法：** 簡單的knapsack problem。排序之後由最大的開始放。
