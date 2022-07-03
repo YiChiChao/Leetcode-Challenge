@@ -19,13 +19,13 @@
 
 ### 376. Wiggle Subsequence
 **看題目的想法：** 因為看到題目是要求`Longest Subsequece`，就想到之前演算法課有教過求類似題目時是用dp，照著這個想法去想。
-1. 確認Base Case：f(1) = 1, f(2) 如果前兩個數字步的話就一定是2
+1. 確認Base Case：f(1) = 1, f(2) 如果前兩個數字不相同的話就一定是2
 2. 確立Recursive Form：
 ```cpp =
 MaxSequenceLength = MaxSequenceLength + (((arr[i]-arr[i-1])*(arr[i-1]-arr[i-2]))<0)? 1 : 0
 ```
 
-**寫完的想法：**有抓到一點dp的感覺，也有記得去處理邊界條件。
+**寫完的想法：** 有抓到一點dp的感覺，也有記得去處理邊界條件。
 
 
 ## Sorting
