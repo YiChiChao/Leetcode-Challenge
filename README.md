@@ -56,3 +56,9 @@ long long int maxhor = max(horizontalCuts[0], h - horizontalCuts[horizontalCuts.
 long long int maxver = max(verticalCuts[0], w - verticalCuts[verticalCuts.size()-1]);
 ```
 
+## Union Find
+
+### 128. Longest Consecutive Sequence
+寫得很矇，原本想要用Disjoint Set實作出來，但可能寫得不太好，最後還是TLE。
+最後用Unordered Map去完成，查了資料Unordered Map是利用紅黑數和hash table構成的，有空來補這個知識。
+
