@@ -40,6 +40,19 @@ MaxSequenceLength = MaxSequenceLength + (((arr[i]-arr[i-1])*(arr[i-1]-arr[i-2]))
 
 **優化過後：** 和前面幾題一樣，其實不需要利用整個vector去記錄每一階階梯的總cost。觀察Recursive Form可看出只需要留下前兩階階梯的紀錄。將vector改成變數f0和f1，時間從11ms降到7ms。
 
+### 198. House Robber
+**看題目的想法：** 用了和上一題一樣的想法去做，但是沒有注意到這一題他不一定是取前一個房子的數字，而是只要不是相鄰房子個個數都可以取。
+
+所以寫法應該要修正成訂定一個變數去紀錄前面所有的max rob數，去和前一個房子得rob數比較。
+
+Base Case: Max = nums[0]，f1(adjacent house) = nums[1]
+
+Recursive Form：
+```cpp = 
+current house rob count = max( Max + nums[i], f1);
+Max = max(Max, f1); //將相鄰的房子rob數也納入Max中
+```
+
 
 ## Sorting
 ### 1710. Maximum Units on a Truck
