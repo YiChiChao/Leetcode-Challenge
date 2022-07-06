@@ -29,6 +29,17 @@ MaxSequenceLength = MaxSequenceLength + (((arr[i]-arr[i-1])*(arr[i-1]-arr[i-2]))
 
 **寫完的想法：** 有抓到一點dp的感覺，也有記得去處理邊界條件。
 
+### 746. Min Cost Climbing Stairs
+**看題目的想法：** 
+
+這題有點像 `70` 的延伸題。
+
+從小的階數來看，要到達每一階的最小cost就是「本階梯的cost」加上「到達上一步階梯的總cost」。
+
+然而我們不知道我們走到這一步階梯是跨一步還是兩步到達的，所以要去比較上一階和上兩階的總cost哪一個比較小，才能推測到達現在這一階的最小cost。
+
+**優化過後：** 和前面幾題一樣，其實不需要利用整個vector去記錄每一階階梯的總cost。觀察Recursive Form可看出只需要留下前兩階階梯的紀錄。將vector改成變數f0和f1，時間從11ms降到7ms。
+
 
 ## Sorting
 ### 1710. Maximum Units on a Truck
