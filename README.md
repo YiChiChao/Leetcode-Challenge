@@ -45,12 +45,16 @@ MaxSequenceLength = MaxSequenceLength + (((arr[i]-arr[i-1])*(arr[i-1]-arr[i-2]))
 
 所以寫法應該要修正成訂定一個變數去紀錄前面所有的max rob數，去和前一個房子得rob數比較。
 
-Base Case: Max = nums[0]，f1(adjacent house) = nums[1]
-
+Base Case: 
+```cpp = 
+int Max = nums[0];
+int f1(adjacent house) = nums[1];
+```
 Recursive Form：
 ```cpp = 
-current house rob count = max( Max + nums[i], f1);
-Max = max(Max, f1); //將相鄰的房子rob數也納入Max中
+int temp = f1;
+f1 (current house rob count) = max( Max + nums[i], f1);
+Max = max(Max, temp); //將相鄰的房子rob數也納入Max中
 ```
 
 
