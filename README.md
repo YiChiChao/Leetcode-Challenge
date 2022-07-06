@@ -57,6 +57,11 @@ f1 (current house rob count) = max( Max + nums[i], f1);
 Max = max(Max, temp); //將相鄰的房子rob數也納入Max中
 ```
 
+### 213. House Robber II
+**看題目的想法：** 和上一題的差別是在於頭跟尾只有一個能夠被偷，所以我就把dp 做了兩次。
+
+一次是只能取頭，一次是只能取尾。而到底會不會偷頭或是尾就讓dp去決定，但可以保證兩種狀況不會重疊就好。
+
 
 ## Sorting
 ### 1710. Maximum Units on a Truck
