@@ -7,7 +7,7 @@ public:
     }
     int rob(vector<int>& nums) {
         if(nums.size() == 1)return nums[0];
-        //base case
+        //base cases
         int Max = nums[0];
         int f1 = nums[1];
         int size = nums.size();
